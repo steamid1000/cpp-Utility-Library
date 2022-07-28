@@ -1,4 +1,4 @@
-#pragma once 
+#pragma once
 #include "bits/stdc++.h"
 
 namespace util
@@ -20,7 +20,7 @@ namespace util
             {
                 if (arr[j] > arr[j + 1])
                 {
-                    swap(arr, j, j+1);
+                    swap(arr, j, j + 1);
                     swaped++;
                 }
             }
@@ -144,6 +144,41 @@ namespace util
         }
 
         return false;
+    }
+
+    //^ Return true if a palindrome string can be made by re-organizing the given string
+    bool canBePalindrome(std::string input)
+    {
+        std::unordered_map<char, int> occurence;
+
+        for (int i = 0; i < input.length(); i++) //^ Recording the number of occurence of each character
+        {
+            if (occurence.find(input[i]) == occurence.end())
+            {
+                occurence.insert(std::make_pair(input[i], 1));
+            }
+            else
+            {
+                occurence[input[i]]++;
+            }
+        }
+
+        //^ If number of odd occurence characters are greater than 1 then we cant make a palindrome out of it
+
+        int oddCharacters = 0;
+        int evenCharacters = 0;
+
+        for (auto iter : occurence)
+        {
+            (iter.second % 2 == 0) ? evenCharacters++ : oddCharacters++;
+        }
+
+        if (oddCharacters > 1)
+        {
+            return false;
+        }
+
+        return true;
     }
 
 }

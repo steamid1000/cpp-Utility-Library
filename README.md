@@ -10,11 +10,12 @@ A growing list of common and helpful functions for cpp 🚀🚀
 2) Linked List 
 3) Reverse Linked List
 4) IsPalindrome function ( Checks if the string is palindrome )
-5) Searching a Key/Element in Arrays
-6) Displaying Arrays
-7) Displaying Linked List
-8) Displaying Vectors
-9) Bubble Sort ( With slight improvements )
+5) CanBePalindrome function ( Checks if a palindrome can be made by reorganizing a given string)
+6) Searching a Key/Element in Arrays
+7) Displaying Arrays
+8) Displaying Linked List
+9) Displaying Vectors
+10) Bubble Sort ( With slight improvements )
 
 ...
 
