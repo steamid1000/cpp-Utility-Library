@@ -11,38 +11,6 @@ namespace util
         arr[j] = temp;
     }
 
-    void bubble_sort(int arr[], int size)
-    {
-        for (int i = 0; i < size; i++)
-        {
-            short swaped = 0; //& will check the number of swaps, if 0 then break
-            for (int j = 0; j < size - 1; j++)
-            {
-                if (arr[j] > arr[j + 1])
-                {
-                    swap(arr, j, j + 1);
-                    swaped++;
-                }
-            }
-
-            if (swaped == 0)
-            {
-                return;
-            }
-        }
-    }
-
-    template <typename T>
-    void displayArray(T arr[], int size = 0) //^ displays the array on console
-    {
-
-        for (int i = 0; i < size; i++)
-        {
-            std::cout << arr[i] << " ";
-        }
-        std::cout << "\n";
-    }
-
     //& block of the linked list class and fucntion
     class linkedList //^ I will add the support for other types using template soon
     {
@@ -107,16 +75,6 @@ namespace util
         head = prev;
     }
 
-    template <typename T>
-    void displayVector(std::vector<T> vec) //^ Can display vectors of general types
-    {
-        for (auto i : vec)
-        {
-            std::cout << i << " ";
-        }
-        std::cout << "\n";
-    }
-
     bool isPalin(std::string input) //^ function to check if a given string is palindrome or not
     {
         int j = input.length() - 1;
@@ -130,20 +88,6 @@ namespace util
         }
 
         return true;
-    }
-
-    template <typename T>
-    bool SearchInArray(T arr[], int size, T element) //^ Can generally be used for int,string and char Arrays or their smaller sub-Arays
-    {                                                //^ which can be determined by the size you give for searching.
-        for (int i = 0; i < size; i++)
-        {
-            if (arr[i] == element)
-            {
-                return true;
-            }
-        }
-
-        return false;
     }
 
     //^ Return true if a palindrome string can be made by re-organizing the given string
@@ -181,4 +125,94 @@ namespace util
         return true;
     }
 
+}
+
+namespace util::sortingAlgorithms
+{
+
+    void bubble_sort(int arr[], int size)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            short swaped = 0; //& will check the number of swaps, if 0 then break
+            for (int j = 0; j < size - 1; j++)
+            {
+                if (arr[j] > arr[j + 1])
+                {
+                    swap(arr, j, j + 1);
+                    swaped++;
+                }
+            }
+
+            if (swaped == 0)
+            {
+                return;
+            }
+        }
+    }
+
+    void insertionSort(int arr[], int size, char order = 'a') //^ takes an extra paramater to sort in ascending or desecending order
+    {
+        for (int i = 1; i < size; i++)
+        {
+            int temp = arr[i];
+            int j = i - 1;
+            if (order == 'a')
+            {
+                while (temp < arr[j] and j >= 0)
+                {
+                    arr[j + 1] = arr[j];
+                    j--;
+                }
+            }
+            else
+            {
+                while (temp > arr[j] and j >= 0)
+                {
+                    arr[j + 1] = arr[j];
+                    j--;
+                }
+            }
+
+            arr[j + 1] = temp;
+        }
+    }
+
+}
+
+namespace util::ArrayFunctions{
+template <typename T>
+void displayArray(T arr[], int size = 0) //^ displays the array on console
+{
+
+    for (int i = 0; i < size; i++)
+    {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << "\n";
+}
+
+template <typename T>
+bool SearchInArray(T arr[], int size, T element) //^ Can generally be used for int,string and char Arrays or their smaller sub-Arays
+{                                                //^ which can be determined by the size you give for searching.
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] == element)
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+template <typename T>
+void displayVector(std::vector<T> vec) //^ Can display vectors of general types
+{
+    for (auto i : vec)
+    {
+        std::cout << i << " ";
+    }
+    std::cout << "\n";
+}
 }
