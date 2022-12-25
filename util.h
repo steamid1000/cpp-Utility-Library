@@ -47,16 +47,7 @@ namespace util
         }
     };
 
-    void displayLinkedList(linkedList *head) // displays the linked list
-    {
-        while (head != NULL)
-        {
-            std::cout << head->val << "->";
-            head = head->next;
-        }
-
-        std::cout << "NULL\n";
-    }
+   
 
     void reverseLL(linkedList *&head) //^ fucntion reverses the linked list in place
     {
@@ -178,6 +169,7 @@ namespace util::sortingAlgorithms
         }
     }
 
+
 }
 
 namespace util::ArrayFunctions{
@@ -215,4 +207,16 @@ void displayVector(std::vector<T> vec) //^ Can display vectors of general types
     }
     std::cout << "\n";
 }
+
+
+    void displayLinkedList(linkedList *head) // displays the linked list
+    {
+        while (head != NULL)
+        {
+            std::cout << head->val << "->";
+            head = head->next;
+        }
+
+        std::cout << "NULL\n";
+    }
 }

@@ -5,17 +5,23 @@ A growing list of common and helpful functions for cpp 🚀🚀
 
 ### Note: use the namespace 'util' 🚧🚧
 
-### List of Functions:
-1) Swap (swapping elements in arrays)
-2) Linked List 
-3) Reverse Linked List
-4) IsPalindrome function ( Checks if the string is palindrome )
-5) CanBePalindrome function ( Checks if a palindrome can be made by reorganizing a given string)
-6) Searching a Key/Element in Arrays
-7) Displaying Arrays
-8) Displaying Linked List
-9) Displaying Vectors
-10) Bubble Sort ( With slight improvements )
+### List of Functions according to sections:
+#### Sorting Algorithms:
+ \* Bubble Sort ( With slight improvements )
+ \* Insertion Sort (Both ascending 'a' and descending 'd' order)
+
+#### Arrays,Vectors,Linked_Lists - Displaying/Searching:
+\* Displaying Arrays
+\* Swap (swapping elements in arrays)
+\* Searching a Key/Element in Arrays
+\* Displaying Vectors
+\* Displaying Linked List
+
+#### Still to be given their sections:
+\* Linked List 
+\* Reverse Linked List
+\* IsPalindrome function ( Checks if the string is palindrome )
+\* CanBePalindrome function ( Checks if a palindrome can be made by reorganizing a given string)
 
 ...
 
